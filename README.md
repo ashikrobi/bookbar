@@ -1,4 +1,4 @@
-# Book Shop (Assignment 10)
+# Bookbar (Assignment 10)
 
 **Note: Description of the project**
-Full description goes here...
+Homepage of the app showcases all the books available on our store. You as a user can buy books by clicking the buy now button. Order page will show which books the user have selected to buy. Admin panel is connected to the database directly. So any books can be added to the store. To buy any books user has to login to access checkout. Deals not completed yet.
