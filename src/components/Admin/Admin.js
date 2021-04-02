@@ -19,7 +19,7 @@ const Admin = () => {
     }
     const handleSubmit = (event) => {
         const newBook = {...books};
-        fetch('http://localhost:5000/addBooks', {
+        fetch('https://apricot-sundae-34567.herokuapp.com/addBooks', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newBook)
