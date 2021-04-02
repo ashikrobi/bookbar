@@ -10,6 +10,11 @@ const Home = () => {
     }, [])
     return (
         <div>
+            {
+                books.length === 0 && 
+                <div class="spinner-border text-primary" role="status">
+                </div>
+            }
             <div class="row row-cols-1 row-cols-md-4 g-4 ml-4 mr-4 home-img">
                 {
                     books.map(book =>
