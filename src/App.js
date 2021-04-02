@@ -16,12 +16,15 @@ import Navigation from './components/Navigation/Navigation';
 
 //user context
 export const UserContext = createContext();
+export const orderContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [order, setOrder] = useState([]);
   return (
     <div>
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <orderContext.Provider value={[order, setOrder]}>
       <Router>
       <Navigation></Navigation>
         <Switch>
@@ -48,6 +51,7 @@ function App() {
           </Route>
         </Switch>
     </Router>
+    </orderContext.Provider>
     </UserContext.Provider>
     </div>
   );

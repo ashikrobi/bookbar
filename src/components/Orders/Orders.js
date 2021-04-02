@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { orderContext } from '../../App';
 
 const Orders = () => {
     document.title='Orders';
+    const [order] = useContext(orderContext);
+    const {title, price} = order[0];
     return (
         <div>
             <table class="table">
@@ -14,14 +17,14 @@ const Orders = () => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Book Name</td>
+                        <td>{title}</td>
                         <td>1</td>
-                        <td>$234</td>
+                        <td>${price}</td>
                     </tr>
                     <tr>
                         <td>Total</td>
                         <td></td>
-                        <td>$234</td>
+                        <td>${price}</td>
                     </tr>
                     <tr>
                         <td></td>

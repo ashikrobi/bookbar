@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { orderContext } from '../../App';
 import Product from '../Product/Product';
 
 const Home = () => {
     document.title='Store Front';
     const [books, setBooks] = useState([]);
+    // const [order, setOrder] = useState([]);
+    const [order, setOrder] = useContext(orderContext);
     useEffect(() => {
         fetch('http://localhost:5000/books')
         .then(res => res.json())
@@ -11,6 +14,8 @@ const Home = () => {
     }, [])
     const handleBuyNow = (product) => {
         console.log(product);
+        const newOrder = [...order, product];
+        setOrder(newOrder);
     }
     return (
         <div>
