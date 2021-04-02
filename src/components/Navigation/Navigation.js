@@ -8,6 +8,7 @@ const Navigation = () => {
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             <div class="container">
                 <p class='navbar-brand text-uppercase'>Bookbar</p>
+                {loggedInUser.email && <h5 class="mr-2">{loggedInUser.name}</h5>}
                 <button class="navbar-toggler" data-toggle='collapse' data-target='#navbarNav'>
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -24,6 +25,9 @@ const Navigation = () => {
                         </li>
                         <li class="nav-item">
                         <Link class="nav-link" to="deals">Deals</Link>
+                        </li>
+                        <li class="nav-item">
+                            {loggedInUser.email && <button class='btn btn-outline-danger' onClick={() => setLoggedInUser({})}>Sign Out</button>}
                         </li>
                     </ul>
                 </div>

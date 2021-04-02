@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen, faPlus, faThLarge } from '@fortawesome/free-solid-svg-icons'
 
 const Admin = () => {
     document.title='Admin Panel';
@@ -31,16 +33,16 @@ const Admin = () => {
     }
     return (
         <div class='row'>
-            <div class='col-md-3 col-sm-6' style={{border: "1px solid black"}}>
-                <h4 class='text-uppercase'>Book Shop</h4>
-                <h5>Manage books</h5>
-                <h5>Add books</h5>
-                <h5>Edit books</h5>
+            <div class='col-md-2 ml-5 shadow-lg p-3 mb-5 bg-body rounded border border-primary bg-primary bg-gradient text-white'>
+                <h4 class='text-uppercase mb-5 ml-5'>Book Shop</h4>
+                <h5 class='ml-5'><span class='mr-2'><FontAwesomeIcon icon={faThLarge}/></span>Manage books</h5>
+                <h5 class='ml-5'><span class='mr-2'><FontAwesomeIcon icon={faPlus}/></span>Add book</h5>
+                <h5 class='ml-5'><span class='mr-2'><FontAwesomeIcon icon={faPen}/></span>Edit book</h5>
             </div>
             
-            <div class='col-md-9 col-sm-6' style={{border: "1px solid black"}}>
+            <div class='col-md-9 ml-5 shadow-lg p-3 mb-5 bg-body rounded border border-primary'>
                 <h4 class='mb-3'>Add book</h4>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} class='col-md-6 offset-md-3'>
                     <div class='mb-3'>
                         <label>Book Name</label>
                         <input onBlur={handleBlur} type="text" name="title" id="title" class="form-control" required/>

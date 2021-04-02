@@ -5,7 +5,6 @@ import Product from '../Product/Product';
 const Home = () => {
     document.title='Store Front';
     const [books, setBooks] = useState([]);
-    // const [order, setOrder] = useState([]);
     const [order, setOrder] = useContext(orderContext);
     useEffect(() => {
         fetch('http://localhost:5000/books')
